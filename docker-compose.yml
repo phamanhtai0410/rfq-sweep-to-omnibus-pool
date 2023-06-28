@@ -1,8 +1,8 @@
 version: '3.7'
 
 services:
-  service:
-    image: asset_api
+  sweep_to_omnibus_job:
+    image: sweep_to_omnibus_job_image
     env_file:
       - .env
     build:
@@ -11,9 +11,7 @@ services:
     volumes:
       - ./:/src
     ports:
-      - "8881:8000"
-    depends_on:
-      - app_db
+      - "8888:8000"
     networks:
       - base-network
 
